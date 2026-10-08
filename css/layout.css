@@ -1,0 +1,54 @@
+/* =========================================================================
+   Cấu trúc cấp trang. Không flex/grid/gap.
+
+   Cách co giãn:
+   - < 80rem: bố cục chảy tự nhiên (1–2 cột), số đo [ƯỚC] cho khổ nhỏ —
+     Figma chỉ vẽ khổ 1920.
+   - ≥ 80rem: dựng đúng toạ độ Figma bên trong một .frame rộng 1920 đơn vị.
+     Một đơn vị --u = min(1px, bề rộng trang / 1920): ở khổ 1920 trở lên
+     --u = 1px nên khớp pixel tuyệt đối; hẹp hơn thì cả khung thu theo tỉ lệ.
+   - > 1920: .frame giữ 1920px canh giữa, nền của section trải hết bề ngang.
+
+   Mỗi phần tử đặt toạ độ bằng biến không đơn vị --x --y --w --h (đơn vị
+   Figma, tính từ mép trên section) và --fs --lh cho cỡ chữ.
+   ========================================================================= */
+
+/* Không kế thừa: phần tử con không vô tình nhận toạ độ của cha. */
+@property --x { syntax: "*"; inherits: false; }
+@property --y { syntax: "*"; inherits: false; }
+@property --w { syntax: "*"; inherits: false; }
+@property --h { syntax: "*"; inherits: false; }
+@property --fs { syntax: "*"; inherits: false; }
+@property --lh { syntax: "*"; inherits: false; }
+
+@layer layout {
+  .page {
+    position: relative;
+    isolation: isolate;
+    overflow: clip;
+    container-type: inline-size;
+    /* 100cqw được tính tại phần tử dùng biến — tức theo bề rộng .page. */
+    --u: min(1px, 100cqw / 1920);   /* [FIGMA] khung 1920 */
+  }
+
+  .container {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 20px;           /* [ƯỚC] lề điện thoại */
+  }
+
+  @media (width >= 48rem) {
+    .container { padding-inline: 40px; }   /* [ƯỚC] lề tablet */
+  }
+
+  @media (width >= 80rem) {
+    .container { padding-inline: 0; }
+
+    .frame {
+      position: relative;
+      width: calc(1920 * var(--u));          /* [FIGMA] khung */
+      height: calc(var(--frame-h) * var(--u));
+      margin-inline: auto;
+    }
+  }
+}

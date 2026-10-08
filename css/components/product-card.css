@@ -1,0 +1,62 @@
+/* Thẻ sản phẩm: ảnh bo góc + tên + "Explore Now!" + mũi tên. Cả thẻ là link. */
+@layer components {
+  .product-card {
+    position: relative;
+    display: block;
+    padding-bottom: 72px;                   /* [ƯỚC] chỗ cho chữ khổ nhỏ */
+    color: var(--color-ink);                /* [FIGMA] #191919 */
+  }
+
+  .product-card__image {
+    width: 100%;
+    border-radius: var(--radius-card);      /* [FIGMA] 20 */
+  }
+
+  .product-card__title {
+    position: absolute;
+    left: 0;
+    bottom: 32px;                           /* [ƯỚC] */
+    font-size: 22px;                        /* [ƯỚC] */
+    font-weight: var(--weight-medium);      /* [FIGMA] 500 */
+    line-height: 32px;
+    letter-spacing: -0.04em;                /* [FIGMA] -4% */
+  }
+
+  .product-card--wide .product-card__title { color: var(--color-black); }   /* [FIGMA] #000000 */
+
+  .product-card__cta {
+    position: absolute;
+    left: 0;
+    bottom: 4px;                            /* [ƯỚC] */
+    font-size: 16px;                        /* [ƯỚC] */
+    font-weight: var(--weight-medium);      /* [FIGMA] 500 */
+    line-height: 28px;
+    letter-spacing: -0.04em;                /* [FIGMA] -4% */
+    color: var(--color-muted);              /* [FIGMA] #7F7F7F */
+  }
+
+  .product-card__arrow {
+    position: absolute;
+    right: 0;
+    bottom: 24px;                           /* [ƯỚC] */
+    fill: none;
+    stroke: var(--color-arrow);             /* [FIGMA] #797979 */
+    stroke-width: 2.2;                      /* [ĐO] nét mũi tên */
+    transition: translate var(--duration-fast) var(--ease-out);
+  }
+
+  @media (hover: hover) {
+    .product-card:hover .product-card__arrow { translate: 6px 0; }
+  }
+
+  .product-card:focus-visible .product-card__arrow,
+  .product-card:active .product-card__arrow { translate: 6px 0; }
+
+  @media (width >= 80rem) {
+    .product-card { position: static; padding: 0; }
+    .product-card__image { border-radius: calc(20 * var(--u)); }
+    .product-card__title { --fs: 32; --lh: 50; }       /* [FIGMA] 32/50 */
+    .product-card__cta { --fs: 24; --lh: 50; }         /* [FIGMA] 24/50 */
+    .product-card__arrow { --w: 34; --h: 22; }         /* [ĐO] 34×22 */
+  }
+}

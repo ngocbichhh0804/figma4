@@ -1,0 +1,74 @@
+/* Nút nền đen chữ trắng. Biến thể chỉ khác kích thước, cỡ chữ, bo góc. */
+@layer components {
+  .button {
+    display: inline-block;
+    padding: 12px 24px;                     /* [ƯỚC] khổ nhỏ */
+    font-size: 18px;                        /* [ƯỚC] */
+    font-weight: var(--weight-medium);      /* [FIGMA] 500 */
+    line-height: 24px;
+    color: var(--color-white);
+    text-align: center;
+    background-color: var(--color-black);   /* [FIGMA] #000000 */
+    border-radius: 7px;                     /* [FIGMA] Rectangle 11 */
+    transition: background-color var(--duration-fast) var(--ease-out);
+  }
+
+  @media (hover: hover) {
+    .button:hover { background-color: #333333; }   /* [ƯỚC] Figma không vẽ hover */
+  }
+
+  .button--signup {
+    margin-top: 4px;
+    letter-spacing: -0.03em;                /* [FIGMA] -3% */
+    text-transform: uppercase;
+    color: #fefefe;                         /* [FIGMA] */
+  }
+
+  .button--hero { letter-spacing: -0.05em; }   /* [FIGMA] -5% */
+
+  .button--payday {
+    font-weight: var(--weight-semibold);    /* [FIGMA] 600 */
+    letter-spacing: 0.02em;                 /* [FIGMA] 2% */
+    text-transform: uppercase;
+    border-radius: 8px;                     /* [FIGMA] 8.14 */
+  }
+
+  .button--send {
+    letter-spacing: 0.03em;                 /* [FIGMA] 3% */
+    text-transform: uppercase;
+    border-radius: 8px;                     /* [FIGMA] Rectangle 62 */
+  }
+
+  @media (width >= 80rem) {
+    .button { text-align: left; }
+
+    .button--signup {
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0 0 0 calc(23 * var(--u));  /* [ĐO] chữ S ở x1708 */
+      --fs: 24; --lh: 62;                   /* [FIGMA] 24px */
+    }
+
+    .button--hero {
+      --x: 225; --y: 680; --w: 221; --h: 82;   /* [FIGMA] 221×82, [ĐO] x225 y844 */
+      padding: calc(1 * var(--u)) 0 0 calc(41 * var(--u));   /* [FIGMA] chữ lệch 41, [ĐO] hạ 1 */
+      --fs: 30; --lh: 82;                      /* [FIGMA] 30px */
+    }
+
+    .button--payday {
+      --x: 1077; --y: 717; --w: 266; --h: 95.33;   /* [FIGMA] Rectangle 30, [ĐO] mép 1077,3208 */
+      padding: calc(1.5 * var(--u)) 0 0 calc(51.76 * var(--u));   /* [FIGMA] chữ ở x1128.76, [ĐO] hạ 1.5 */
+      --fs: 27.9; --lh: 95.33;                             /* [FIGMA] 27.9px */
+      border-radius: calc(8.14 * var(--u));
+    }
+
+    .button--send {
+      --x: 403; --y: 10; --w: 161; --h: 67;    /* [FIGMA] Rectangle 62 (1076,6036) */
+      padding: calc(1 * var(--u)) 0 0 calc(38 * var(--u));   /* [FIGMA] chữ ở x1114, [ĐO] hạ 1 */
+      --fs: 33; --lh: 67;                      /* [FIGMA] 33px */
+      border-radius: calc(8 * var(--u));
+    }
+  }
+}

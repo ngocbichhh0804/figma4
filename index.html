@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fashion — Let’s explore unique clothes</title>
+    <meta name="description" content="Live for influential and innovative fashion. New arrivals, payday sale and young favourites." />
+
+    <!-- Thứ tự layer khai báo một lần; nhờ vậy không cần !important. -->
+    <style>
+      @layer reset, tokens, base, layout, components, utilities;
+    </style>
+
+    <link rel="preload" href="assets/fonts/poppins-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/poppins-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components/site-header.css" />
+    <link rel="stylesheet" href="css/components/button.css" />
+    <link rel="stylesheet" href="css/components/hero.css" />
+    <link rel="stylesheet" href="css/components/brands.css" />
+    <link rel="stylesheet" href="css/components/section-title.css" />
+    <link rel="stylesheet" href="css/components/product-card.css" />
+    <link rel="stylesheet" href="css/components/arrivals.css" />
+    <link rel="stylesheet" href="css/components/payday.css" />
+    <link rel="stylesheet" href="css/components/favourites.css" />
+    <link rel="stylesheet" href="css/components/app-promo.css" />
+    <link rel="stylesheet" href="css/components/newsletter.css" />
+    <link rel="stylesheet" href="css/components/site-footer.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <!-- Khung Figma "Landing page": 1920 × 6814 -->
+    <div class="page page--home">
+      <!-- ===================== Header ===================== -->
+      <header class="site-header">
+        <div class="container frame site-header__frame">
+          <a class="site-header__logo at" href="index.html" aria-label="Fashion — home">
+            <img class="site-header__mark at" src="assets/icon/logo-mark.png" width="32" height="29" alt="" />
+            <span class="site-header__name at fs">FASHION</span>
+          </a>
+
+          <!-- Menu điện thoại: checkbox + :has(), không JS -->
+          <input class="site-header__toggle visually-hidden" type="checkbox" id="nav-toggle" />
+          <label class="site-header__burger" for="nav-toggle">
+            <span class="visually-hidden">Menu</span>
+            <span class="site-header__burger-bar" aria-hidden="true"></span>
+          </label>
+
+          <nav class="site-nav" aria-label="Main">
+            <ul class="site-nav__list" role="list">
+              <li class="site-nav__item site-nav__item--catalogue at"><a class="site-nav__link fs" href="#arrivals">Catalogue</a></li>
+              <li class="site-nav__item site-nav__item--fashion at"><a class="site-nav__link fs" href="#payday">Fashion</a></li>
+              <li class="site-nav__item site-nav__item--favourite at"><a class="site-nav__link fs" href="#favourites">Favourite</a></li>
+              <li class="site-nav__item site-nav__item--lifestyle at"><a class="site-nav__link fs" href="#app">Lifestyle</a></li>
+              <li class="site-nav__item site-nav__item--signup at"><a class="button button--signup fs" href="#newsletter">Sign up</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <main id="main">
+        <!-- ===================== Hero ===================== -->
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="container frame hero__frame">
+            <div class="hero__card at">
+              <img class="hero__star hero__star--1 at" src="assets/img/star-hero.png" width="56" height="51" alt="" />
+              <img class="hero__star hero__star--2 at" src="assets/img/star-hero.png" width="56" height="51" alt="" />
+              <img class="hero__star hero__star--3 at" src="assets/img/star-hero.png" width="56" height="51" alt="" />
+              <img class="hero__star hero__star--4 at" src="assets/img/star-hero.png" width="56" height="51" alt="" />
+              <img class="hero__image at" src="assets/img/hero-girl.png" srcset="assets/img/hero-girl.png 1x, assets/img/hero-girl@2x.png 2x" width="871" height="784"
+                alt="Smiling woman in a fluffy pink faux-fur coat" fetchpriority="high" />
+
+              <div class="hero__text">
+                <span class="hero__mark hero__mark--white at" aria-hidden="true"></span>
+                <span class="hero__mark hero__mark--yellow at" aria-hidden="true"></span>
+                <h1 class="hero__title at fs" id="hero-title">
+                  <span class="hero__line">Let’s</span>
+                  <span class="hero__line">explore</span>
+                  <span class="hero__line">unique</span>
+                  <span class="hero__line">clothes.</span>
+                </h1>
+                <p class="hero__lead at fs">Live for Influential and Innovative fashion!</p>
+                <a class="button button--hero at fs" href="#arrivals">Shop Now</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== Logo đối tác ===================== -->
+        <section class="brands" aria-label="Our brands">
+          <div class="container frame brands__frame">
+            <ul class="brands__list" role="list">
+              <li class="brands__item brands__item--hm at"><img class="brands__logo" src="assets/icon/brand-hm.png" width="119" height="70" alt="H&amp;M" /></li>
+              <li class="brands__item brands__item--obey at"><img class="brands__logo" src="assets/icon/brand-obey.png" width="150" height="53" alt="Obey" /></li>
+              <li class="brands__item brands__item--shopify at"><img class="brands__logo" src="assets/icon/brand-shopify.png" width="176" height="62" alt="Shopify" /></li>
+              <li class="brands__item brands__item--lacoste at"><img class="brands__logo" src="assets/icon/brand-lacoste.png" width="235" height="70" alt="Lacoste" /></li>
+              <li class="brands__item brands__item--levis at"><img class="brands__logo" src="assets/icon/brand-levis.png" width="127" height="71" alt="Levi’s" /></li>
+              <li class="brands__item brands__item--amazon at"><img class="brands__logo" src="assets/icon/brand-amazon.png" width="166" height="63" alt="Amazon" /></li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===================== New arrivals ===================== -->
+        <section class="arrivals" id="arrivals" aria-labelledby="arrivals-title">
+          <div class="container frame arrivals__frame">
+            <div class="section-title arrivals__title at">
+              <img class="section-title__swash at" src="assets/icon/swash.png" width="190" height="32" alt="" />
+              <h2 class="section-title__text at fs" id="arrivals-title">New arrivals</h2>
+            </div>
+
+            <ul class="arrivals__list" role="list">
+              <li class="arrivals__item arrivals__item--1 at">
+                <a class="product-card product-card--1" href="#">
+                  <img class="product-card__image" src="assets/img/arrival-hoodies.png" srcset="assets/img/arrival-hoodies.png 1x, assets/img/arrival-hoodies@2x.png 2x" width="484" height="704"
+                    alt="Woman in an orange cropped hoodie" loading="lazy" />
+                  <h3 class="product-card__title at fs">Hoodies &amp; Sweetshirt</h3>
+                  <p class="product-card__cta at fs">Explore Now!</p>
+                  <svg class="product-card__arrow at" width="34" height="22" viewBox="0 0 34 22" aria-hidden="true">
+                    <path d="M0.5 11H32M22.5 0.8 32.7 11 22.5 21.2" />
+                  </svg>
+                </a>
+              </li>
+              <li class="arrivals__item arrivals__item--2 at">
+                <a class="product-card product-card--2" href="#">
+                  <img class="product-card__image" src="assets/img/arrival-coats.png" srcset="assets/img/arrival-coats.png 1x, assets/img/arrival-coats@2x.png 2x" width="484" height="704"
+                    alt="Woman in a pale blue jacket and beanie checking her phone" loading="lazy" />
+                  <h3 class="product-card__title at fs">Coats &amp; Parkas</h3>
+                  <p class="product-card__cta at fs">Explore Now!</p>
+                  <svg class="product-card__arrow at" width="34" height="22" viewBox="0 0 34 22" aria-hidden="true">
+                    <path d="M0.5 11H32M22.5 0.8 32.7 11 22.5 21.2" />
+                  </svg>
+                </a>
+              </li>
+              <li class="arrivals__item arrivals__item--3 at">
+                <a class="product-card product-card--3" href="#">
+                  <img class="product-card__image" src="assets/img/arrival-tees.png" srcset="assets/img/arrival-tees.png 1x, assets/img/arrival-tees@2x.png 2x" width="490" height="704"
+                    alt="Woman in a white tee and pink denim shorts" loading="lazy" />
+                  <h3 class="product-card__title at fs">Tees &amp; T-Shirt</h3>
+                  <p class="product-card__cta at fs">Explore Now!</p>
+                  <svg class="product-card__arrow at" width="34" height="22" viewBox="0 0 34 22" aria-hidden="true">
+                    <path d="M0.5 11H32M22.5 0.8 32.7 11 22.5 21.2" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===================== Payday sale ===================== -->
+        <section class="payday" id="payday" aria-labelledby="payday-title">
+          <div class="container frame payday__frame">
+            <img class="payday__image at" src="assets/img/payday-girl.png" width="988" height="968"
+              alt="Smiling woman in a yellow tank top and denim shorts" loading="lazy" />
+            <img class="payday__star payday__star--1 at" src="assets/img/star-payday-1.png" width="74" height="75" alt="" />
+            <img class="payday__star payday__star--2 at" src="assets/img/star-payday-2.png" width="72" height="72" alt="" />
+            <img class="payday__star payday__star--3 at" src="assets/img/star-payday-3.png" width="72" height="72" alt="" />
+            <img class="payday__star payday__star--4 at" src="assets/img/star-payday-4.png" width="72" height="74" alt="" />
+
+            <div class="payday__body">
+              <span class="payday__mark at" aria-hidden="true"></span>
+              <h2 class="payday__title at fs" id="payday-title">
+                <span class="payday__line">Payday</span>
+                <span class="payday__line">Sale now</span>
+              </h2>
+              <p class="payday__lead at fs">Spend minimal $100 get 30% off <br class="payday__br" />voucher code for your next purchase</p>
+              <p class="payday__date at fs"><time datetime="2021-06-01">1 June</time> - <time datetime="2021-06-10">10 June 2021</time></p>
+              <p class="payday__terms at fs">*Terms &amp; Conditions apply</p>
+              <a class="button button--payday at fs" href="#arrivals">Shop now</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== Young's favourite ===================== -->
+        <section class="favourites" id="favourites" aria-labelledby="favourites-title">
+          <div class="container frame favourites__frame">
+            <div class="section-title favourites__title at">
+              <img class="section-title__swash at" src="assets/icon/swash.png" width="190" height="32" alt="" />
+              <h2 class="section-title__text section-title__text--mixed at fs" id="favourites-title">Young’s Favourite</h2>
+            </div>
+
+            <ul class="favourites__list" role="list">
+              <li class="favourites__item favourites__item--1 at">
+                <a class="product-card product-card--wide" href="#">
+                  <img class="product-card__image" src="assets/img/fav-trending.png" srcset="assets/img/fav-trending.png 1x, assets/img/fav-trending@2x.png 2x" width="834" height="575"
+                    alt="Two friends in sunglasses laughing together" loading="lazy" />
+                  <h3 class="product-card__title at fs">Trending on instagram</h3>
+                  <p class="product-card__cta at fs">Explore Now!</p>
+                  <svg class="product-card__arrow at" width="34" height="22" viewBox="0 0 34 22" aria-hidden="true">
+                    <path d="M0.5 11H32M22.5 0.8 32.7 11 22.5 21.2" />
+                  </svg>
+                </a>
+              </li>
+              <li class="favourites__item favourites__item--2 at">
+                <a class="product-card product-card--wide" href="#">
+                  <img class="product-card__image" src="assets/img/fav-under-40.png" srcset="assets/img/fav-under-40.png 1x, assets/img/fav-under-40@2x.png 2x" width="838" height="575"
+                    alt="Woman in a white top and denim shorts on a pink background" loading="lazy" />
+                  <h3 class="product-card__title at fs">All Under $40</h3>
+                  <p class="product-card__cta at fs">Explore Now!</p>
+                  <svg class="product-card__arrow at" width="34" height="22" viewBox="0 0 34 22" aria-hidden="true">
+                    <path d="M0.5 11H32M22.5 0.8 32.7 11 22.5 21.2" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ===================== Tải ứng dụng ===================== -->
+        <section class="app-promo" id="app" aria-labelledby="app-title">
+          <div class="container frame app-promo__frame">
+            <div class="app-promo__visual">
+              <span class="app-promo__ring app-promo__ring--1 at" aria-hidden="true"></span>
+              <span class="app-promo__ring app-promo__ring--2 at" aria-hidden="true"></span>
+              <span class="app-promo__ring app-promo__ring--3 at" aria-hidden="true"></span>
+              <span class="app-promo__dot app-promo__dot--1 at" aria-hidden="true"></span>
+              <span class="app-promo__dot app-promo__dot--2 at" aria-hidden="true"></span>
+              <span class="app-promo__dot app-promo__dot--3 at" aria-hidden="true"></span>
+              <span class="app-promo__dot app-promo__dot--4 at" aria-hidden="true"></span>
+              <img class="app-promo__phone at" src="assets/img/app-phone.png" srcset="assets/img/app-phone.png 1x, assets/img/app-phone@2x.png 2x" width="500" height="882"
+                alt="Shopping app screen: Match your style, with trending dresses" loading="lazy" />
+            </div>
+
+            <div class="app-promo__body">
+              <h2 class="app-promo__title at fs" id="app-title">Download app &amp; <br class="app-promo__br" />get the voucher!</h2>
+              <p class="app-promo__lead at fs">Get 30% off for first transaction using <br class="app-promo__br" />Rondovision mobile app for now.</p>
+              <ul class="app-promo__stores" role="list">
+                <li class="app-promo__store app-promo__store--apple at">
+                  <a href="#"><img src="assets/img/badge-app-store.png" width="204" height="71" alt="Download on the App Store" loading="lazy" /></a>
+                </li>
+                <li class="app-promo__store app-promo__store--google at">
+                  <a href="#"><img src="assets/img/badge-google-play.png" width="204" height="71" alt="Get it on Google Play" loading="lazy" /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== Đăng ký nhận tin ===================== -->
+        <section class="newsletter" id="newsletter" aria-labelledby="newsletter-title">
+          <div class="container frame newsletter__frame">
+            <h2 class="newsletter__title at fs" id="newsletter-title">Join shopping community to <br class="newsletter__br" />get monthly promo</h2>
+            <p class="newsletter__lead at fs">Type your email down below and be young wild generation</p>
+            <form class="newsletter__form at" action="#" method="post">
+              <label class="visually-hidden" for="newsletter-email">Email address</label>
+              <input class="newsletter__input at fs" id="newsletter-email" name="email" type="email"
+                autocomplete="email" placeholder="Add your email here" required />
+              <button class="button button--send at fs" type="submit">Send</button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <!-- ===================== Footer ===================== -->
+      <footer class="site-footer">
+        <div class="container frame site-footer__frame">
+          <div class="site-footer__about">
+            <p class="site-footer__name at fs">FASHION</p>
+            <p class="site-footer__tagline at fs">Complete your style with awesome <br class="site-footer__br" />clothes from us.</p>
+            <ul class="site-footer__social" role="list">
+              <li class="site-footer__social-item site-footer__social-item--1 at"><a href="#"><img src="assets/icon/social-facebook.png" width="52" height="52" alt="Facebook" /></a></li>
+              <li class="site-footer__social-item site-footer__social-item--2 at"><a href="#"><img src="assets/icon/social-instagram.png" width="52" height="52" alt="Instagram" /></a></li>
+              <li class="site-footer__social-item site-footer__social-item--3 at"><a href="#"><img src="assets/icon/social-twitter.png" width="52" height="52" alt="Twitter" /></a></li>
+              <li class="site-footer__social-item site-footer__social-item--4 at"><a href="#"><img src="assets/icon/social-linkedin.png" width="52" height="52" alt="LinkedIn" /></a></li>
+            </ul>
+          </div>
+
+          <nav class="site-footer__col site-footer__col--company at" aria-labelledby="footer-company">
+            <h2 class="site-footer__heading at fs" id="footer-company">Company</h2>
+            <ul role="list">
+              <li class="site-footer__item at fs"><a class="site-footer__link" href="#">About</a></li>
+              <li class="site-footer__item at fs"><a class="site-footer__link" href="#">Contact us</a></li>
+              <li class="site-footer__item at fs"><a class="site-footer__link" href="#">Support</a></li>
+              <li class="site-footer__item at fs"><a class="site-footer__link" href="#">Careers</a></li>
+            </ul>
+          </nav>
+          <nav class="site-footer__col site-footer__col--quick at" aria-labelledby="footer-quick">
+            <h2 class="site-footer__heading at fs" id="footer-quick">Quick Link</h2>
+            <ul role="list">
+              <li class="site-footer__item at fs"><a class="site-footer__link" href="#">Share Location</a></li>
+              <li class="site-footer__item at fs"><a class="site-footer__link" href="#">Orders Tracking</a></li>
+              <li class="site-footer__item at fs"><a class="site-footer__link" href="#">Size Guide</a></li>
+              <li class="site-footer__item at fs"><a class="site-footer__link" href="#">FAQs</a></li>
+            </ul>
+          </nav>
+          <nav class="site-footer__col site-footer__col--legal at" aria-labelledby="footer-legal">
+            <h2 class="site-footer__heading at fs" id="footer-legal">Legal</h2>
+            <ul role="list">
+              <li class="site-footer__item at fs"><a class="site-footer__link" href="#">Terms &amp; conditions</a></li>
+              <li class="site-footer__item at fs"><a class="site-footer__link" href="#">Privacy Policy</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

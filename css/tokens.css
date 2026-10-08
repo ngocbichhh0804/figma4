@@ -1,0 +1,55 @@
+/* =========================================================================
+   Design token — Figma4
+
+   File này chỉ chứa giá trị DÙNG CHUNG: bảng màu, font, thang độ đậm, cỡ
+   chữ và leading chung, chuyển động, bo góc. Số đo riêng của từng component
+   ghi thẳng trong file component đó, kèm nhãn nguồn gốc bên cạnh:
+
+   [FIGMA]  đọc thẳng từ panel inspector của Figma
+   [ĐO]     đo từ ảnh export 1:1 của bản thiết kế
+   [MẪU]    lấy từ file asset được cung cấp
+   [ƯỚC]    ước lượng, còn chờ xác nhận lại trong Figma
+   ========================================================================= */
+@layer tokens {
+  :root {
+    /* ---------- Màu: giá trị gốc ---------- */
+    --color-white: #ffffff;          /* [FIGMA] bảng màu Typography      */
+    --color-black: #000000;          /* [FIGMA] bảng màu Typography      */
+    --color-yellow: #e6c744;         /* [FIGMA] #E6C744 màu thương hiệu  */
+    --color-yellow-soft: #ebd96b;    /* [FIGMA] dải logo, nét gạch, chấm */
+    --color-yellow-deep: #e5c643;    /* [FIGMA] Rectangle 56 khối đăng ký */
+    --color-grey-surface: #f4f6f5;   /* [FIGMA] Rectangle 2 nền hero     */
+    --color-ink: #191919;            /* [FIGMA] tiêu đề thẻ              */
+    --color-ink-nav: #242323;        /* [FIGMA] chữ menu                 */
+    --color-muted: #7f7f7f;          /* [FIGMA] "Explore Now!"           */
+    --color-footer-text: #8e8e8e;    /* [FIGMA] link chân trang          */
+    --color-footer-head: #d9d9d9;    /* [FIGMA] tiêu đề cột chân trang   */
+    --color-arrow: #797979;          /* [FIGMA] mũi tên thẻ              */
+
+    /* ---------- Màu: theo ngữ nghĩa ---------- */
+    --surface-page: var(--color-white);
+    --text-primary: var(--color-black);
+    --accent-stroke: var(--color-black);
+
+    /* ---------- Chữ ---------- */
+    --font-display: "Poppins", system-ui, sans-serif;   /* [FIGMA] Poppins (OFL) */
+    --font-sans: "Poppins", system-ui, sans-serif;      /* [FIGMA] Poppins (OFL) */
+    --font-footer: "Roboto", system-ui, sans-serif;     /* [FIGMA] Roboto (OFL)  */
+
+    --text-body: 16px;
+    --leading-tight: 1.15;
+    --leading-normal: 1.5;
+
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-black: 900;
+
+    /* ---------- Hình khối, chuyển động ---------- */
+    --radius-card: 20px;             /* [FIGMA] Rectangle 20/21/22/49/50 */
+    --radius-pill: 999px;
+    --duration-fast: 160ms;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}

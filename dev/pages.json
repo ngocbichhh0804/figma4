@@ -1,0 +1,12 @@
+{
+  "name": "Figma4",
+  "pages": [
+    {
+      "slug": "home",
+      "label": "Landing page",
+      "file": "index.html",
+      "w": 1920,
+      "h": 6814
+    }
+  ]
+}

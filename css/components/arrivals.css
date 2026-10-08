@@ -1,0 +1,40 @@
+/* New arrivals: 3 thẻ dọc. Điện thoại 1 cột, tablet 2 cột (float). */
+@layer components {
+  .arrivals__list { font-size: 0; }
+
+  .arrivals__item { font-size: 16px; margin-bottom: 32px; }   /* [ƯỚC] */
+
+  @media (width >= 48rem) {
+    .arrivals__list { display: flow-root; }
+    .arrivals__item {
+      float: left;
+      width: calc((100% - 24px) / 2);       /* [ƯỚC] 2 cột, khe 24 */
+    }
+    .arrivals__item:nth-child(2n) { margin-left: 24px; }
+    .arrivals__item:nth-child(2n + 1) { clear: left; }
+  }
+
+  @media (width >= 80rem) {
+    .arrivals__frame { --frame-h: 1226; }               /* [ĐO] 1265 → 2491 */
+    .arrivals__title { --x: 104; --y: 70; }             /* [ĐO] mặt chữ 106,1342 */
+    .arrivals__title .section-title__swash {
+      --x: 225; --y: 22; --w: 186; --h: 35;             /* [FIGMA] Vector 8 (329,1357) 186×34.94 */
+    }
+
+    .arrivals__item { float: none; margin: 0; --y: 228; --h: 860; }   /* [ĐO] ảnh y1493 */
+    .arrivals__item--1 { --x: 104; --w: 484; }          /* [ĐO] */
+    .arrivals__item--2 { --x: 678; --w: 484; }          /* [ĐO] */
+    .arrivals__item--3 { --x: 1252; --w: 490; }         /* [ĐO] */
+
+    /* Toạ độ trong thẻ */
+    .arrivals__item .product-card__title { --x: 0; --y: 732; }   /* [ĐO] mặt chữ y2237 */
+    .arrivals__item--2 .product-card__title { --y: 731; }        /* [ĐO] y2236 */
+    .arrivals__item--3 .product-card__title { --y: 728; }        /* [ĐO] y2233 */
+    .arrivals__item .product-card__cta { --x: 0; --y: 775; }     /* [ĐO] y2283 */
+    .arrivals__item--2 .product-card__cta { --y: 773; }          /* [ĐO] y2281 */
+    .arrivals__item--3 .product-card__cta { --y: 772; }          /* [ĐO] y2280 */
+    .arrivals__item--1 .product-card__arrow { --x: 451; --y: 759; }   /* [ĐO] 556,2252 */
+    .arrivals__item--2 .product-card__arrow { --x: 451; --y: 756; }   /* [ĐO] 1130,2249 */
+    .arrivals__item--3 .product-card__arrow { --x: 457; --y: 755; }   /* [ĐO] 1710,2248 */
+  }
+}

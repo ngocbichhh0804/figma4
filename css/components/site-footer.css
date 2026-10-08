@@ -1,0 +1,95 @@
+/* Chân trang đen: thương hiệu + mạng xã hội, 3 cột link (Roboto). */
+@layer components {
+  .site-footer {
+    background-color: var(--color-black);   /* [FIGMA] Group 67 #000000 */
+    color: var(--color-footer-text);
+  }
+
+  .site-footer__frame { display: flow-root; padding-block: 56px; }   /* [ƯỚC] */
+
+  .site-footer__name {
+    font-size: 32px;                        /* [ƯỚC] */
+    font-weight: var(--weight-black);       /* [FIGMA] 900 */
+    line-height: 1;
+    letter-spacing: 0.03em;                 /* [FIGMA] 3% */
+    color: var(--color-white);
+  }
+
+  .site-footer__tagline,
+  .site-footer__heading,
+  .site-footer__item {
+    font-family: var(--font-footer);        /* [FIGMA] Roboto */
+    font-size: 18px;                        /* [ƯỚC] */
+    font-weight: var(--weight-regular);
+    line-height: 1.67;                      /* [FIGMA] 40/24 */
+    letter-spacing: 0.02em;                 /* [FIGMA] 2% */
+  }
+
+  .site-footer__tagline { margin-top: 16px; }
+  .site-footer__br { display: none; }
+
+  .site-footer__social { margin-top: 20px; font-size: 0; }
+
+  .site-footer__social-item {
+    display: inline-block;
+    width: 44px;                            /* [ƯỚC] vùng bấm 44 */
+    margin-right: 12px;                     /* [ƯỚC] */
+  }
+
+  .site-footer__social-item img { width: 100%; }
+
+  .site-footer__col {
+    float: left;
+    width: 50%;
+    margin-top: 40px;                       /* [ƯỚC] */
+  }
+
+  .site-footer__col--legal { clear: left; }
+
+  .site-footer__heading { color: var(--color-footer-head); }   /* [FIGMA] #D9D9D9 */
+
+  .site-footer__link { display: inline-block; padding-block: 6px; }   /* [ƯỚC] vùng bấm ≥ 24 */
+
+  @media (hover: hover) {
+    .site-footer__link:hover { color: var(--color-white); }   /* [ƯỚC] */
+  }
+
+  @media (width >= 48rem) {
+    .site-footer__col { width: 33.333%; }
+    .site-footer__col--legal { clear: none; }
+    .site-footer__br { display: inline; }
+  }
+
+  @media (width >= 80rem) {
+    .site-footer__frame { --frame-h: 545; padding: 0; }                 /* [FIGMA] 1920×545 */
+    .site-footer__name { --x: 100; --y: 129; --fs: 40; --lh: 40; }      /* [FIGMA] 40/100%, [ĐO] y6403 */
+    .site-footer__tagline { --x: 100; --y: 203.5; --fs: 24; --lh: 40; }   /* [FIGMA] 24/40, [ĐO] y6482 */
+    .site-footer__social-item { margin: 0; --y: 315; --w: 52; --h: 52; }   /* [FIGMA] 52×52, [ĐO] y6584 */
+    .site-footer__social-item--1 { --x: 100; }                          /* [ĐO] */
+    .site-footer__social-item--2 { --x: 166; }
+    .site-footer__social-item--3 { --x: 232; }
+    .site-footer__social-item--4 { --x: 298; }
+
+    .site-footer__col { float: none; margin: 0; --y: 125; --w: 260; --h: 300; }
+    .site-footer__col--company { --x: 930; }                            /* [ĐO] mặt chữ x931 */
+    .site-footer__col--quick { --x: 1240; }                             /* [ĐO] x1241 */
+    .site-footer__col--legal { --x: 1605; }                             /* [ĐO] x1607 */
+
+    .site-footer__heading,
+    .site-footer__item { --x: 0; --fs: 24; --lh: 40; }                  /* [FIGMA] 24/40 */
+    .site-footer__heading { --y: 0; }                                   /* [ĐO] y6404 */
+    .site-footer__link { padding: 0; }
+
+    /* Khoảng cách dòng trong Figma không đều — giữ đúng từng dòng [ĐO] */
+    .site-footer__col--company .site-footer__item:nth-child(1) { --y: 60; }
+    .site-footer__col--company .site-footer__item:nth-child(2) { --y: 120; }
+    .site-footer__col--company .site-footer__item:nth-child(3) { --y: 185; }
+    .site-footer__col--company .site-footer__item:nth-child(4) { --y: 245; }
+    .site-footer__col--quick .site-footer__item:nth-child(1) { --y: 62; --x: -1; }
+    .site-footer__col--quick .site-footer__item:nth-child(2) { --y: 123; }
+    .site-footer__col--quick .site-footer__item:nth-child(3) { --y: 183; --x: -1; }
+    .site-footer__col--quick .site-footer__item:nth-child(4) { --y: 243; --x: -2; }
+    .site-footer__col--legal .site-footer__item:nth-child(1) { --y: 62; }
+    .site-footer__col--legal .site-footer__item:nth-child(2) { --y: 121; --x: -2; }
+  }
+}

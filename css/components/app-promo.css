@@ -1,0 +1,81 @@
+/* Mời tải app: chữ + nút store bên trái, điện thoại + vòng tròn bên phải. */
+@layer components {
+  .app-promo__frame { padding-block: 64px; }   /* [ƯỚC] khổ nhỏ */
+
+  .app-promo__visual { position: relative; }
+
+  .app-promo__ring,
+  .app-promo__dot { display: none; }
+
+  .app-promo__phone {
+    width: 72%;                             /* [ƯỚC] */
+    max-width: 360px;
+    margin: 0 auto 32px;
+  }
+
+  .app-promo__title {
+    font-size: 26px;                        /* [ƯỚC] */
+    font-weight: var(--weight-black);       /* [FIGMA] 900 */
+    line-height: 1.5;                       /* [FIGMA] 150% */
+    letter-spacing: 0.06em;                 /* [FIGMA] 6% */
+    text-transform: uppercase;
+  }
+
+  .app-promo__br { display: none; }
+
+  .app-promo__lead {
+    margin-top: 16px;
+    font-size: 18px;                        /* [ƯỚC] */
+    font-weight: var(--weight-medium);      /* [FIGMA] 500 */
+    line-height: 1.45;                      /* [FIGMA] 35/24 */
+    letter-spacing: -0.04em;                /* [FIGMA] -4% */
+    color: #7c7c7c;                         /* [FIGMA] */
+  }
+
+  .app-promo__stores { margin-top: 24px; font-size: 0; }
+
+  .app-promo__store {
+    display: inline-block;
+    width: calc((100% - 12px) / 2);         /* [ƯỚC] 2 nút 1 hàng từ 320px */
+    max-width: 180px;
+    margin-right: 12px;                     /* [ƯỚC] */
+    vertical-align: top;
+  }
+
+  .app-promo__store img { width: 100%; border-radius: 10px; }   /* [FIGMA] Radius 10 */
+
+  @media (width >= 48rem) {
+    .app-promo__br { display: inline; }
+  }
+
+  @media (width >= 80rem) {
+    .app-promo__frame { --frame-h: 1046; padding: 0; }   /* [ĐO] 4600 → 5646 */
+    .app-promo__visual { position: static; }
+
+    .app-promo__ring {
+      display: block;
+      background-color: var(--color-white);              /* [FIGMA] #FFFFFF */
+      border: solid #efeceb;                             /* [FIGMA] #EFECEB, inner */
+      border-radius: 50%;
+    }
+    .app-promo__ring--1 { --x: 1065; --y: 156; --w: 637; --h: 629; border-width: calc(2.5 * var(--u)); }      /* [FIGMA] Ellipse 1 */
+    .app-promo__ring--2 { --x: 1114; --y: 206; --w: 537; --h: 530.26; border-width: calc(2.11 * var(--u)); } /* [FIGMA] Ellipse 5 */
+    .app-promo__ring--3 { --x: 1156; --y: 254; --w: 440; --h: 434.47; border-width: calc(1.73 * var(--u)); } /* [FIGMA] Ellipse 6 */
+
+    .app-promo__dot { display: block; border-radius: 50%; }
+    .app-promo__dot--1 { --x: 1065; --y: 171; --w: 22; --h: 24; background-color: #89807a; }   /* [FIGMA] Ellipse 4 */
+    .app-promo__dot--2 { --x: 1630; --y: 156; --w: 50; --h: 50; background-color: var(--color-yellow-soft); }   /* [FIGMA] Ellipse 2 */
+    .app-promo__dot--3 { --x: 1031; --y: 785; --w: 34; --h: 34; background-color: var(--color-yellow-soft); }   /* [FIGMA] 34×34 */
+    .app-promo__dot--4 { --x: 1685; --y: 706; --w: 17; --h: 17; background-color: #89807a; }   /* [FIGMA] 17×17 */
+
+    .app-promo__phone { --x: 1135; --y: 34; --w: 500; --h: 882; max-width: none; }   /* [ĐO] locate 1135,4634 */
+
+    .app-promo__title { --x: 219; --y: 297.5; --fs: 48; --lh: 72; }   /* [FIGMA] 48 / 150%, [ĐO] y4915 */
+    .app-promo__lead { --x: 219; --y: 482; --fs: 24; --lh: 35; }    /* [FIGMA] 24/35, [ĐO] y5089 */
+    .app-promo__stores { margin: 0; }
+    .app-promo__store { margin: 0; --y: 608; --w: 204; --h: 71; }   /* [FIGMA] 204×71, [ĐO] y5208 */
+    .app-promo__store--apple { --x: 219; }                          /* [ĐO] */
+    .app-promo__store--google { --x: 442; }                         /* [ĐO] */
+    .app-promo__store img { border-radius: calc(10 * var(--u)); }
+  }
+}

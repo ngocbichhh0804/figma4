@@ -1,0 +1,46 @@
+/* Dải logo đối tác trên nền vàng. Logo nền trắng → hoà trộn Multiply như Figma. */
+@layer components {
+  .brands {
+    background-color: var(--color-yellow-soft);   /* [FIGMA] Rectangle 87 #EBD96B */
+    margin-top: 32px;                       /* [ƯỚC] khổ nhỏ */
+  }
+
+  .brands__list {
+    padding: 24px 0;                        /* [ƯỚC] */
+    font-size: 0;
+    text-align: center;
+  }
+
+  .brands__item {
+    display: inline-block;
+    width: 33.333%;
+    padding: 8px;                           /* [ƯỚC] */
+    vertical-align: middle;
+  }
+
+  .brands__logo {
+    width: auto;
+    max-height: 44px;                       /* [ƯỚC] */
+    margin-inline: auto;
+    mix-blend-mode: multiply;               /* [FIGMA] Blend Multiply */
+  }
+
+  @media (width >= 48rem) {
+    .brands__item { width: 16.666%; }
+  }
+
+  @media (width >= 80rem) {
+    .brands { margin-top: 0; }
+    .brands__frame { --frame-h: 186; }      /* [FIGMA] Rectangle 87 cao 186 */
+    .brands__list { padding: 0; }
+    .brands__item { padding: 0; }
+    .brands__logo { width: 100%; height: 100%; max-height: none; }
+
+    .brands__item--hm { --x: 171; --y: 62; --w: 119; --h: 70; }        /* [ĐO] locate 171,1141 */
+    .brands__item--obey { --x: 410; --y: 70; --w: 150; --h: 53; }      /* [ĐO] 410,1149 */
+    .brands__item--shopify { --x: 681; --y: 66; --w: 176; --h: 62; }   /* [ĐO] 681,1145 */
+    .brands__item--lacoste { --x: 978; --y: 61; --w: 235; --h: 70; }   /* [ĐO] 978,1140 */
+    .brands__item--levis { --x: 1334; --y: 61; --w: 127; --h: 71; }    /* [ĐO] 1334,1140 */
+    .brands__item--amazon { --x: 1582; --y: 65; --w: 166; --h: 63; }   /* [ĐO] 1582,1144 */
+  }
+}

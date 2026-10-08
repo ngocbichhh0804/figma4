@@ -1,0 +1,62 @@
+# tên  x0,y0,x1,y1  [rows] [thr=] [light]
+logo-mark      95,55,138,100
+logo-text      140,55,345,100
+nav-catalogue  970,60,1115,90
+nav-fashion    1170,60,1280,90
+nav-favourite  1330,60,1465,90
+nav-lifestyle  1520,60,1635,90
+signup-btn     1675,40,1830,115
+signup-text    1700,62,1800,90 light
+hero-lets      215,255,480,345
+hero-explore   215,375,660,462
+hero-unique    150,440,760,640
+hero-clothes   215,615,700,705
+hero-lead      210,755,820,800
+hero-btn       215,835,455,935
+hero-btn-text  250,860,420,915 light
+logo-hm        160,1130,300,1220
+logo-obey      400,1140,570,1210
+logo-shopify   670,1135,865,1215
+logo-lacoste   970,1130,1220,1220
+logo-levis     1325,1130,1470,1220
+logo-amazon    1575,1135,1760,1215
+na-title       95,1330,530,1400
+card1-title    100,2225,430,2280
+card1-cta      100,2278,260,2312 thr=180
+card1-arrow    545,2240,600,2285 thr=180
+card2-title    674,2225,920,2280
+card2-cta      674,2278,830,2312 thr=180
+card2-arrow    1120,2240,1175,2285 thr=180
+card3-title    1248,2222,1470,2280
+card3-cta      1248,2278,1410,2312 thr=180
+card3-arrow    1700,2240,1755,2285 thr=180
+payday-mark    1045,2605,1610,2780 thr=120
+payday-sale    1070,2785,1680,2885 thr=120
+payday-lead    1070,2940,1730,3048 thr=120
+payday-date    1070,3075,1470,3115 thr=120
+payday-terms   1070,3122,1550,3175 thr=120
+payday-btn     1070,3200,1350,3312 thr=120
+payday-btn-txt 1120,3236,1300,3276 light
+yf-title       95,3640,620,3720
+yf1-title      95,4420,460,4475
+yf1-cta        95,4472,260,4505 thr=180
+yf1-arrow      890,4435,950,4480 thr=180
+yf2-title      975,4420,1190,4475
+yf2-cta        975,4472,1140,4505 thr=180
+yf2-arrow      1775,4435,1830,4480 thr=180
+dl-title       210,4905,730,5032
+dl-lead        210,5080,640,5160 thr=180
+dl-badges      210,5200,660,5290
+newsletter-t1  470,5790,1450,5850 light thr=240
+newsletter-t2  620,5862,1300,5920 light thr=240
+newsletter-lead 440,5945,1470,5995 light thr=240
+form-box       660,6015,1260,6125
+form-ph        690,6050,970,6095 thr=180
+send-text      1100,6050,1220,6090 light
+ft-name        95,6395,300,6440 light
+ft-tag         95,6475,410,6550 light
+ft-social      95,6578,355,6642
+ft-company     920,6395,1060,6600 light rows
+ft-quick       1230,6395,1420,6675 light rows
+ft-legal       1595,6395,1830,6560 light rows
+ft-careers     920,6640,1030,6675 light

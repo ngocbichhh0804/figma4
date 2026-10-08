@@ -1,0 +1,31 @@
+/* Tiêu đề mục: chữ Poppins Black + nét quét vàng phía sau. */
+@layer components {
+  .section-title {
+    position: relative;
+    display: inline-block;
+    margin: 56px 0 24px;                    /* [ƯỚC] khổ nhỏ */
+  }
+
+  .section-title__swash {
+    position: absolute;
+    right: -8px;                            /* [ƯỚC] */
+    bottom: -10px;                          /* [ƯỚC] */
+    width: 55%;                             /* [ƯỚC] */
+  }
+
+  .section-title__text {
+    position: relative;
+    font-size: clamp(22px, 7vw, 32px);      /* [ƯỚC] vừa 1 dòng từ 320px */
+    font-weight: var(--weight-black);       /* [FIGMA] 900 */
+    line-height: 1.1;
+    letter-spacing: 0.06em;                 /* [FIGMA] 6% */
+    text-transform: uppercase;
+  }
+
+  .section-title__text--mixed { text-transform: none; }   /* "Young’s Favourite" viết thường */
+
+  @media (width >= 80rem) {
+    .section-title { margin: 0; }
+    .section-title__text { --x: 0; --y: 0; --fs: 48; --lh: 50; }   /* [FIGMA] 48/50 */
+  }
+}

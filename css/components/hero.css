@@ -1,0 +1,94 @@
+/* Hero: nền xám bo góc, chữ lớn bên trái, ảnh người mẫu bên phải. */
+@layer components {
+  .hero__card {
+    position: relative;
+    padding: 40px 24px 0;                   /* [ƯỚC] khổ nhỏ */
+    background-color: var(--color-grey-surface);   /* [FIGMA] #F4F6F5 */
+    border-radius: 32px;                    /* [ƯỚC] thu từ 59 */
+    overflow: hidden;
+  }
+
+  .hero__star { display: none; }
+
+  .hero__text {
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero__title {
+    position: relative;
+    font-size: clamp(44px, 12vw, 72px);     /* [ƯỚC] max 72 trước khổ desktop */
+    font-weight: var(--weight-black);       /* [FIGMA] Black */
+    line-height: 1.25;                      /* [FIGMA] 120/96 */
+    text-transform: uppercase;
+  }
+
+  .hero__line { display: block; }
+
+  /* Mảng trắng / vàng nghiêng sau chữ — khổ nhỏ vẽ ngay sau dòng 1 và 3 */
+  .hero__mark {
+    position: absolute;
+    left: -12px;                            /* [ƯỚC] */
+    width: min(100%, 340px);                /* [ƯỚC] */
+    height: 1.25em;
+    font-size: clamp(44px, 12vw, 72px);
+    rotate: -2deg;                          /* [FIGMA] Rotation 2° */
+  }
+
+  /* top theo em của cỡ chữ tiêu đề: dòng 1 bắt đầu ở 0, dòng 3 ở 2.5em */
+  .hero__mark--white { top: 0; background-color: var(--color-white); }                    /* [ƯỚC] */
+  .hero__mark--yellow { top: 2.5em; background-color: var(--color-yellow-soft); }         /* [ƯỚC] */
+
+  .hero__lead {
+    position: relative;
+    margin-top: 24px;                       /* [ƯỚC] */
+    font-size: 18px;                        /* [ƯỚC] */
+    line-height: 1.4;
+    letter-spacing: -0.05em;                /* [FIGMA] -5% */
+    color: #191818;                         /* [FIGMA] */
+  }
+
+  .hero__text .button--hero { position: relative; margin-top: 24px; }   /* [ƯỚC] */
+
+  .hero__image {
+    position: relative;
+    width: 100%;
+    max-width: 560px;                       /* [ƯỚC] */
+    margin: 24px auto 0;                    /* [ƯỚC] */
+  }
+
+  @media (width >= 48rem) {
+    .hero__card { padding: 56px 48px 0; }   /* [ƯỚC] */
+    .hero__mark { width: 420px; }           /* [ƯỚC] */
+  }
+
+  @media (width >= 80rem) {
+    .hero__frame { --frame-h: 915; }                    /* [FIGMA] 164 → 1079 */
+
+    .hero__card {
+      --x: 100; --y: 0; --w: 1720; --h: 852;            /* [FIGMA] Rectangle 2 */
+      padding: 0;
+      border-radius: calc(59 * var(--u));                /* [FIGMA] Radius 59 */
+      overflow: visible;
+    }
+
+    .hero__text { position: static; }
+
+    /* Toạ độ bên trong thẻ (gốc 100,164) */
+    .hero__star { display: block; --w: 56; --h: 51; }  /* [ĐO] */
+    .hero__star--1 { --x: 749; --y: 68; }               /* [ĐO] 849,232 */
+    .hero__star--2 { --x: 1425; --y: 104; }             /* [ĐO] 1525,268 */
+    .hero__star--3 { --x: 1580; --y: 704; }             /* [ĐO] 1680,868 */
+    .hero__star--4 { --x: 792; --y: 762; }              /* [ĐO] 892,926 */
+
+    .hero__image { --x: 768; --y: 68; --w: 871; --h: 784; max-width: none; }   /* [FIGMA] 868,232 */
+
+    .hero__mark { rotate: -2deg; }
+    .hero__mark--white { --x: 83.1; --y: 75.4; --w: 464.74; --h: 112.14; }    /* [FIGMA] Rectangle 3, [ĐO] tâm 415.5,295.5 */
+    .hero__mark--yellow { --x: 95.1; --y: 309.7; --w: 495.79; --h: 117.55; }  /* [FIGMA] Rectangle 6, [ĐO] tâm 443,532.5 */
+
+    .hero__title { --x: 119; --y: 78; --fs: 96; --lh: 120; }   /* [FIGMA] 96/120, [ĐO] mặt chữ */
+    .hero__lead { --x: 119; --y: 598; --fs: 32; --lh: 32; }    /* [FIGMA] 32px, [ĐO] y764 */
+    .hero__text .button--hero { --x: 125; --y: 680; margin: 0; }   /* [ĐO] 225,844 */
+  }
+}

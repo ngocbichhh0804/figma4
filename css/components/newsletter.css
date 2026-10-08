@@ -1,0 +1,87 @@
+/* Đăng ký nhận tin: nền vàng đậm, chữ trắng canh giữa, ô email + nút SEND. */
+@layer components {
+  .newsletter {
+    background-color: var(--color-yellow-deep);   /* [FIGMA] Rectangle 56 #E5C643 */
+    color: var(--color-white);
+    text-align: center;
+  }
+
+  .newsletter__frame { padding-block: 64px; }    /* [ƯỚC] */
+
+  .newsletter__title {
+    font-size: 26px;                        /* [ƯỚC] */
+    font-weight: var(--weight-black);       /* [FIGMA] 900 */
+    line-height: 1.27;                      /* [FIGMA] 70/55 */
+    letter-spacing: 0.03em;                 /* [FIGMA] 3% */
+    text-transform: uppercase;
+  }
+
+  .newsletter__br { display: none; }
+
+  .newsletter__lead {
+    margin-top: 12px;
+    font-size: 18px;                        /* [ƯỚC] */
+    line-height: 1.4;
+    letter-spacing: 0.03em;                 /* [FIGMA] 3% */
+    color: #fffcf8;                         /* [FIGMA] */
+  }
+
+  .newsletter__form {
+    position: relative;
+    max-width: 574px;                       /* [FIGMA] */
+    height: 64px;                           /* [ƯỚC] */
+    margin: 24px auto 0;
+    background-color: var(--color-white);   /* [FIGMA] */
+    border-radius: 10px;                    /* [FIGMA] Radius 10 */
+    text-align: left;
+  }
+
+  .newsletter__input {
+    display: block;
+    width: calc(100% - 120px);              /* [ƯỚC] chừa chỗ nút */
+    height: 64px;
+    padding: 0 16px;                        /* [ƯỚC] */
+    font-size: 16px;                        /* [ƯỚC] ≥16 để iOS không zoom */
+    letter-spacing: 0.03em;                 /* [FIGMA] 3% */
+    color: var(--color-black);
+    background: transparent;
+    border: 0;
+    border-radius: 10px;
+  }
+
+  .newsletter__input::placeholder { color: #767676; opacity: 1; }   /* [FIGMA] #767676, AA 4.5:1 trên nền trắng */
+
+  .newsletter__form .button--send {
+    position: absolute;
+    right: 6px;                             /* [ƯỚC] */
+    top: 6px;
+    height: 52px;
+  }
+
+  @media (width >= 48rem) {
+    .newsletter__br { display: inline; }
+  }
+
+  @media (width >= 80rem) {
+    .newsletter__frame { --frame-h: 623; padding: 0; }                    /* [FIGMA] */
+    .newsletter__title { --x: 0; --y: 141; --w: 1920; --fs: 55; --lh: 70; }   /* [FIGMA] 55/70, [ĐO] y5802 */
+    /* Figma canh trái trong khung 1010 ở x454 (không đúng tâm 960) */
+    .newsletter__lead {
+      --x: 454; --y: 302; --w: 1010;                                      /* [FIGMA] 1010×29 (454,5948), [ĐO] y5953 */
+      --fs: 32; --lh: 35;                                                 /* [FIGMA] 32/35 */
+      text-align: left;
+    }
+    .newsletter__form {
+      --x: 673; --y: 380; --w: 574; --h: 87;                              /* [FIGMA] 574×87 (673,6026) */
+      max-width: none;
+      border-radius: calc(10 * var(--u));
+    }
+    .newsletter__input {
+      --x: 27; --y: 11; --w: 376; --h: 67;                                /* [FIGMA] chữ ở x700, [ĐO] y6061 */
+      padding: 0;
+      --fs: 24; --lh: 67;                                                 /* [FIGMA] 24px */
+      border-radius: 0;
+    }
+    .newsletter__form .button--send { right: auto; }
+  }
+}

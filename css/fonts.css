@@ -1,0 +1,58 @@
+/* =========================================================================
+   Font của bản thiết kế đều là font mở (SIL OFL) nên dùng nguyên bản, không
+   phải thay. File woff2 để ngay trong assets/fonts/ chứ không gọi Google
+   Fonts: không phụ thuộc máy chủ ngoài, không gửi IP người xem cho bên thứ
+   ba, chữ hiện sớm hơn. Mỗi file chỉ chứa bảng mã latin.
+
+   Poppins 400/500/600/700/900  (toàn trang)
+   Roboto  400                  (chữ thường ở chân trang)
+   ========================================================================= */
+@layer reset {
+  @font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/poppins-latin-400-normal.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/poppins-latin-500-normal.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/poppins-latin-600-normal.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/poppins-latin-700-normal.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/poppins-latin-900-normal.woff2") format("woff2");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Roboto";
+    src: url("../assets/fonts/roboto-latin-400-normal.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+}

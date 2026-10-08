@@ -1,0 +1,117 @@
+/* Header: logo + menu. Điện thoại: menu thu vào nút ☰ (checkbox + :has()). */
+@layer components {
+  .site-header__frame {
+    position: relative;
+    min-height: 72px;                       /* [ƯỚC] header điện thoại */
+  }
+
+  .site-header__logo {
+    position: absolute;
+    left: 20px;                             /* [ƯỚC] = lề .container */
+    top: 20px;                              /* [ƯỚC] */
+    display: block;
+    width: 170px;                           /* [ƯỚC] */
+    height: 32px;                           /* [ƯỚC] */
+    color: var(--color-black);
+  }
+
+  .site-header__mark {
+    position: absolute;
+    left: 0;
+    top: 4px;                               /* [ƯỚC] */
+    width: 26px;                            /* [ƯỚC] */
+    height: auto;
+  }
+
+  .site-header__name {
+    position: absolute;
+    left: 36px;                             /* [ƯỚC] */
+    top: 0;
+    font-size: 28px;                        /* [ƯỚC] */
+    font-weight: var(--weight-black);       /* [FIGMA] Poppins Black */
+    line-height: 32px;                      /* [ƯỚC] */
+    letter-spacing: 0.03em;                 /* [FIGMA] 3% */
+  }
+
+  /* Nút ☰ — chỉ khổ nhỏ */
+  .site-header__burger {
+    position: absolute;
+    right: 12px;                            /* [ƯỚC] */
+    top: 12px;                              /* [ƯỚC] */
+    width: 48px;                            /* [ƯỚC] vùng bấm ≥ 44px */
+    height: 48px;
+    cursor: pointer;
+  }
+
+  .site-header__burger-bar,
+  .site-header__burger-bar::before,
+  .site-header__burger-bar::after {
+    position: absolute;
+    left: 12px;
+    width: 24px;                            /* [ƯỚC] */
+    height: 2px;
+    background-color: var(--color-black);
+  }
+
+  .site-header__burger-bar { top: 23px; }
+  .site-header__burger-bar::before,
+  .site-header__burger-bar::after { content: ""; left: 0; }
+  .site-header__burger-bar::before { top: -7px; }
+  .site-header__burger-bar::after { top: 7px; }
+
+  .site-header__toggle:focus-visible + .site-header__burger {
+    outline: 2px solid var(--accent-stroke);
+    outline-offset: 2px;
+  }
+
+  .site-nav {
+    display: none;
+    padding: 72px 0 16px;                   /* [ƯỚC] dưới hàng logo */
+  }
+
+  .site-header:has(.site-header__toggle:checked) .site-nav { display: block; }
+
+  .site-nav__link {
+    display: block;
+    padding: 12px 0;                        /* [ƯỚC] vùng bấm 46px */
+    font-size: 16px;                        /* [ƯỚC] */
+    font-weight: var(--weight-medium);      /* [FIGMA] 500 */
+    line-height: 22px;
+    letter-spacing: 0.01em;                 /* [FIGMA] 1% */
+    text-transform: uppercase;
+    color: var(--color-ink-nav);
+  }
+
+  .site-nav__item--signup { padding-top: 8px; }
+
+  @media (width >= 80rem) {
+    .site-header__frame { --frame-h: 164; }               /* [ĐO] tới mép nền hero */
+
+    .site-header__logo { --x: 100; --y: 57; --w: 240; --h: 40; }   /* [ĐO] */
+    .site-header__mark { --x: 0; --y: 7; --w: 32; --h: 29; }       /* [ĐO] icon 100,64 */
+    .site-header__name {
+      --x: 44; --y: 1;                      /* [ĐO] chữ F bắt đầu x146 */
+      --fs: 40; --lh: 40;                   /* [FIGMA] 40px, line-height 100% */
+    }
+
+    .site-header__burger { display: none; }
+
+    .site-nav { display: block; padding: 0; }
+
+    .site-nav__link {
+      padding: 0;
+      --fs: 22; --lh: 22;                   /* [FIGMA] 22px, line-height 100% */
+    }
+
+    /* Nới vùng bấm lên ≥ 24px mà không đổi giao diện */
+    .site-nav__link { position: relative; }
+    .site-nav__link::after { content: ""; position: absolute; inset: -12px -8px; }   /* [ƯỚC] */
+
+    .site-nav__item { --y: 65; }                          /* [ĐO] mặt chữ y68 */
+    .site-nav__item--catalogue { --x: 978; }              /* [ĐO] */
+    .site-nav__item--fashion { --x: 1178; }               /* [ĐO] */
+    .site-nav__item--favourite { --x: 1339; }             /* [ĐO] */
+    .site-nav__item--lifestyle { --x: 1527; }             /* [ĐO] */
+    .site-nav__item--signup { --x: 1684; --y: 46; --w: 134; --h: 62; padding: 0; }  /* [FIGMA] Group 3 */
+  }
+}

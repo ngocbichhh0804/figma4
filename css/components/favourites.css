@@ -1,0 +1,31 @@
+/* Young's Favourite: 2 thẻ ngang. */
+@layer components {
+  .favourites__list { font-size: 0; }
+
+  .favourites__item { font-size: 16px; margin-bottom: 32px; }   /* [ƯỚC] */
+
+  @media (width >= 48rem) {
+    .favourites__list { display: flow-root; }
+    .favourites__item { float: left; width: calc((100% - 24px) / 2); }   /* [ƯỚC] khe 24 */
+    .favourites__item--2 { margin-left: 24px; }
+  }
+
+  @media (width >= 80rem) {
+    .favourites__frame { --frame-h: 1141; }             /* [ĐO] 3459 → 4600 */
+    .favourites__title { --x: 100; --y: 191; }          /* [ĐO] mặt chữ y3651 */
+    .favourites__title .section-title__swash {
+      --x: 317; --y: 31; --w: 190; --h: 32;             /* [FIGMA] Vector 9 (417,3681) */
+    }
+
+    .favourites__item { float: none; margin: 0; --y: 358; --h: 700; }   /* [FIGMA] ảnh y3817 */
+    .favourites__item--1 { --x: 100; --w: 834; }        /* [FIGMA] Rectangle 50 */
+    .favourites__item--2 { --x: 982; --w: 838; }        /* [FIGMA] Rectangle 49 */
+
+    .favourites__item .product-card__title { --x: 0; --y: 602.5; }   /* [ĐO] y4431 */
+    .favourites__item--2 .product-card__title { --y: 603; }          /* [ĐO] y4430 */
+    .favourites__item .product-card__cta { --x: 0; --y: 646; }       /* [ĐO] y4478 */
+    .favourites__item--2 .product-card__cta { --y: 645; }            /* [ĐO] y4477 */
+    .favourites__item--1 .product-card__arrow { --x: 802; --y: 630; }   /* [ĐO] 903,4447 */
+    .favourites__item--2 .product-card__arrow { --x: 802; --y: 629; }   /* [ĐO] 1785,4446 */
+  }
+}

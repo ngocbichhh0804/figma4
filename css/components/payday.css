@@ -1,0 +1,91 @@
+/* Payday sale: ảnh trái, khối chữ trên nền gradient vàng bên phải. */
+@layer components {
+  .payday {
+    /* [ĐO] gradient dọc cắt 1px từ ảnh Figma (21 điểm màu #F9DF56 → #E0C340) */
+    background: url("../../assets/img/payday-gradient.png") 0 0 / 100% 100% repeat-x;
+    margin-top: 24px;                       /* [ƯỚC] khổ nhỏ */
+  }
+
+  .payday__frame { position: relative; padding-bottom: 48px; }   /* [ƯỚC] */
+
+  .payday__image {
+    width: calc(100% + 40px);
+    max-width: none;
+    margin-inline: -20px;                   /* [ƯỚC] tràn mép như Figma */
+  }
+
+  .payday__star { display: none; }
+
+  .payday__body { position: relative; padding-top: 32px; }   /* [ƯỚC] */
+
+  .payday__mark {
+    position: absolute;
+    top: 28px;                              /* [ƯỚC] */
+    left: -10px;
+    width: 230px;                           /* [ƯỚC] */
+    height: 64px;
+    background-color: var(--color-white);   /* [FIGMA] Rectangle 25 */
+    rotate: -2deg;                          /* [FIGMA] 2° */
+  }
+
+  .payday__title {
+    position: relative;
+    font-size: 52px;                        /* [ƯỚC] */
+    font-weight: var(--weight-black);       /* [FIGMA] 900 */
+    line-height: 64px;                      /* [ƯỚC] tỉ lệ 137.19/111.61 */
+    text-transform: uppercase;
+  }
+
+  .payday__line { display: block; }
+
+  .payday__lead,
+  .payday__date,
+  .payday__terms {
+    font-size: 18px;                        /* [ƯỚC] */
+    line-height: 26px;
+    letter-spacing: -0.02em;                /* [FIGMA] -2% */
+  }
+
+  .payday__lead {
+    margin-top: 16px;
+    font-weight: var(--weight-medium);      /* [FIGMA] 500 */
+    color: #231300;                         /* [FIGMA] */
+  }
+
+  .payday__br { display: none; }
+
+  .payday__date {
+    margin-top: 12px;
+    font-weight: var(--weight-bold);        /* [FIGMA] 700 */
+    letter-spacing: 0.02em;                 /* [FIGMA] 2% */
+  }
+
+  .payday__body .button--payday { margin-top: 24px; }
+
+  @media (width >= 48rem) {
+    .payday__image { width: 100%; margin-inline: 0; }
+    .payday__br { display: inline; }
+  }
+
+  @media (width >= 80rem) {
+    .payday { margin-top: 0; }
+    .payday__frame { --frame-h: 968; padding: 0; }      /* [FIGMA] 932.94×968 */
+    .payday__body { position: static; padding: 0; }
+
+    .payday__image { --x: 0; --y: 0; --w: 988; --h: 968; margin: 0; }   /* [FIGMA] image 12 */
+
+    .payday__star { display: block; }
+    .payday__star--1 { --x: 773; --y: 99; --w: 74; --h: 75; }    /* [ĐO] 773,2590 */
+    .payday__star--2 { --x: 146; --y: 169; --w: 72; --h: 72; }   /* [ĐO] 146,2660 */
+    .payday__star--3 { --x: 197; --y: 507; --w: 72; --h: 72; }   /* [ĐO] 197,2998 */
+    .payday__star--4 { --x: 826; --y: 655; --w: 72; --h: 74; }   /* [ĐO] 826,3146 */
+
+    .payday__mark { --x: 1055.8; --y: 137.3; --w: 541.43; --h: 130.37; }   /* [FIGMA] Rectangle 25, [ĐO] tâm 1326.5,2693.5 */
+
+    .payday__title { --x: 1077.5; --y: 140.8; --fs: 111.61; --lh: 137.19; }   /* [FIGMA] */
+    .payday__lead { --x: 1077.5; --y: 448; --fs: 36.04; --lh: 52.32; }        /* [FIGMA] cỡ, [ĐO] y2949 */
+    .payday__date { --x: 1077.5; --y: 580; --fs: 36.04; --lh: 52.32; }      /* [ĐO] y3082 */
+    .payday__terms { --x: 1077.5; --y: 628.5; --fs: 36.04; --lh: 52.32; }     /* [ĐO] y3130 */
+    .payday__body .button--payday { margin: 0; }
+  }
+}
